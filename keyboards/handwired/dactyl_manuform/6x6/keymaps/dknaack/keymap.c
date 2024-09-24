@@ -2,79 +2,116 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "layout.h"
+
+enum tap_dance_keys {
+    _MEDIA,
+};
 
 enum custom_layers {
     _QWERTY,
     _LOWER,
     _RAISE,
+    _NUMBER,
+    _SYMBOL,
+    _GAME,
 };
 
+tap_dance_action_t tap_dance_actions[] = {
+    [_MEDIA] = ACTION_TAP_DANCE_DOUBLE(KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK),
+};
+
+#define MEDIA TD(_MEDIA)
+#define GAME TG(_GAME)
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
-#define LAYOUT_dknaack(\
-  L00, L01, L02, L03, L04, L05,			 R00, R01, R02, R03, R04, R05, \
-  L10, L11, L12, L13, L14, L15,			 R10, R11, R12, R13, R14, R15, \
-  L20, L21, L22, L23, L24, L25,			 R20, R21, R22, R23, R24, R25, \
-  L30, L31, L32, L33, L34, L35,			 R30, R31, R32, R33, R34, R35, \
-  L40, L41, L42, L43, L44, L45,			 R40, R41, R42, R43, R44, R45, \
-  					  L53, L52,          R52, R53,					   \
-  						   L51,	         R51,						   \
-  				 L61, L60, L50,          R50, R60, R61				   \
-  ) \
-  { \
-	{ L05,   L04,   L03,   L02,   L01, L00 }, \
-	{ L15,   L14,   L13,   L12,   L11, L10 }, \
-	{ L25,   L24,   L23,   L22,   L21, L20 }, \
-	{ L35,   L34,   L33,   L32,   L31, L30 }, \
-	{ L45,   L44,   L43,   L42,   L41, L40 }, \
-	{ KC_NO, KC_NO, L53,   L52,   L51, L50 }, \
-	{ KC_NO, KC_NO, KC_NO, KC_NO, L61, L60 }, \
-											  \
-	{ R00,   R01,   R02,   R03,   R04, R05 }, \
-	{ R10,   R11,   R12,   R13,   R14, R15 }, \
-	{ R20,   R21,   R22,   R23,   R24, R25 }, \
-	{ R30,   R31,   R32,   R33,   R34, R35 }, \
-	{ R40,   R41,   R42,   R43,   R44, R45 }, \
-	{ KC_NO, KC_NO, R53,   R52,   R51, R50 }, \
-	{ KC_NO, KC_NO, KC_NO, KC_NO, R61, R60 }, \
-}
+#define DE_AE RALT_T(KC_A)
+#define DE_OE RALT_T(KC_P)
+#define DE_UE RALT_T(KC_Y)
 
-#define ESCR   LT(_RAISE, KC_ESC)
-#define TABL   LT(_LOWER, KC_TAB)
-#define TABS   MT(MOD_LSFT, KC_TAB)
-#define ENTA   MT(MOD_LALT, KC_ENT)
+#define ESCR    LT(_RAISE, KC_ESC)
+#define SFT_TAB MT(MOD_LSFT, KC_TAB)
+#define ALT_ENT MT(MOD_RALT, KC_ENT)
 
-#define LS_D LSFT_T(KC_D)
-#define LC_F LCTL_T(KC_F)
-#define LA_S LALT_T(KC_S)
-#define LG_A LGUI_T(KC_A)
+#if 1
+#  define NUM_SPC LT(_RAISE, KC_SPACE)
+#  define SYM_ENT LT(_LOWER, KC_ENT)
 
-#define RS_K RSFT_T(KC_K)
-#define RC_J RCTL_T(KC_J)
-#define RA_L RALT_T(KC_L)
-#define RG_SCLN RGUI_T(KC_SCLN)
+#  define CTL_F    LCTL_T(KC_F)
+#  define SFT_D    LSFT_T(KC_D)
+#  define ALT_S    LALT_T(KC_S)
+#  define GUI_A    LGUI_T(KC_A)
+#  define CTL_J    RCTL_T(KC_J)
+#  define SFT_K    RSFT_T(KC_K)
+#  define ALT_L    RALT_T(KC_L)
+#  define GUI_SCLN RGUI_T(KC_SCLN)
+
+#  define GUI_1 LGUI_T(KC_1)
+#  define ALT_2 LALT_T(KC_2)
+#  define SFT_3 LSFT_T(KC_3)
+#  define CTL_4 LCTL_T(KC_4)
+#  define GUI_0 RGUI_T(KC_0)
+#  define ALT_9 RALT_T(KC_9)
+#  define SFT_8 RSFT_T(KC_8)
+#  define CTL_7 RCTL_T(KC_7)
+#else
+#  define NUM_SPC KC_SPC
+#  define SYM_ENT MT(MOD_RALT, KC_ENT)
+
+#  define CTL_F KC_F
+#  define SFT_D KC_D
+#  define ALT_S KC_S
+#  define GUI_A KC_A
+
+#  define CTL_J KC_J
+#  define SFT_K KC_K
+#  define ALT_L KC_L
+#  define GUI_SCLN KC_SCLN
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT_dknaack(
-	     KC_HOME, KC_1  , KC_2  , KC_3  , KC_4  , KC_5  ,		 KC_6  , KC_7   , KC_8   , KC_9  , KC_0    , KC_END  ,
-	     KC_GRV , KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,	 	 KC_Y  , KC_U   , KC_I   , KC_O  , KC_P    , QK_BOOT ,
-	     KC_BSLS, LG_A  , LA_S  , LS_D  , LC_F  , KC_G  ,	 	 KC_H  , RC_J   , RS_K   , RA_L  , RG_SCLN , KC_QUOT ,
-	     KC_LBRC, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,	 	 KC_N  , KC_M   ,KC_COMM , KC_DOT, KC_SLSH , KC_MINS ,
-	     KC_RBRC,_______,_______,_______,_______,_______,	 	_______, KC_LEFT,KC_DOWN , KC_UP , KC_RIGHT, KC_EQL  ,
-	  								      ESCR  ,KC_LALT,       KC_DEL , TABL   ,
+	     KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,		KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0    ,KC_END ,
+	     KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P    ,QK_BOOT,
+	     KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCLN,KC_QUOT,
+	     KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH ,KC_MINS,
+	     KC_RBRC,MEDIA  ,GAME   ,KC_VOLU,KC_MUTE,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RIGHT,KC_EQL ,
+	  								     ESCR   ,KC_LALT,       KC_DEL ,KC_TAB ,
 	                                             KC_LGUI,       KC_PGUP,
-								  KC_SPC, TABS  ,KC_LCTL,       KC_PGDN, ENTA   , KC_BSPC
+								 NUM_SPC,SFT_TAB,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
 	),
 
-    [_LOWER] = LAYOUT_dknaack(
-	     _______,_______,_______,_______,_______,_______,		_______,_______ ,_______ ,_______,_______  , _______ ,
-	     KC_GRV , KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,	 	 KC_Y  ,_______ ,_______ ,_______, _______ , _______ ,
-	     KC_BSLS, LG_A  , LA_S  , LS_D  , LC_F  , KC_G  ,	 	 KC_H  ,_______ ,_______ ,_______, _______ , _______ ,
-	     KC_LBRC, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,	 	 KC_N  ,_______ ,_______ ,_______, _______ , _______ ,
-	     KC_RBRC,_______,_______,_______,_______,_______,	 	_______,_______ ,_______ ,_______, _______ , _______ ,
-	  								      ESCR  ,KC_LALT,       KC_DEL , TABL   ,
-	                                             KC_LGUI,       KC_PGUP,
-								  KC_SPC, TABS  ,KC_LCTL,       KC_PGDN, ENTA   , KC_BSPC
+    [_RAISE] = LAYOUT_dknaack(
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	     KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,	 	KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,
+	     _______,GUI_1  ,ALT_2  ,SFT_3  ,CTL_4  ,KC_5   ,	 	KC_6   ,CTL_7  ,SFT_8  ,ALT_9  ,GUI_0  ,_______,
+	     _______,KC_GRV ,KC_BSLS,KC_LBRC,KC_RBRC,KC_SPC ,	 	KC_BSPC,KC_QUOT,KC_MINS,KC_EQL ,_______,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	  								     _______,_______,       _______,_______,
+	                                             _______,       _______,
+								 _______,_______,_______,       _______,KC_ENT ,_______
     ),
+
+    [_LOWER] = LAYOUT_dknaack(
+	     _______,_______,_______,_______,_______,_______,		_______,_______,_______,_______,_______,_______,
+	     _______,KC_ESC ,KC_LT  ,KC_GT  ,KC_BSLS,KC_QUOT,	 	KC_AMPR,KC_LBRC,KC_RBRC,KC_AT  ,KC_CIRC,_______,
+	     _______,KC_EXLM,KC_MINS,KC_PLUS,KC_EQL ,KC_DQUO,	 	KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_QUES,_______,
+	     _______,KC_PERC,KC_SLSH,KC_ASTR,KC_UNDS,KC_GRV ,	 	KC_TILD,KC_LCBR,KC_RCBR,KC_DLR ,KC_DOT ,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	  								     _______,_______,       _______,_______,
+	                                             _______,       _______,
+								 _______,_______,_______,       _______,_______,_______
+    ),
+
+	[_GAME] = LAYOUT_dknaack(
+	     KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,		_______,_______,_______,_______,_______,_______,
+	     KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	_______,_______,_______,_______,_______,_______,
+	     KC_BSLS,KC_A   ,KC_S   ,KC_D   ,KC_F   ,KC_G   ,	 	_______,KC_J   ,KC_K   ,KC_L   ,KC_SCLN,_______,
+	     KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	_______,_______,_______,_______,_______,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	  								     KC_ESC ,KC_LALT,       _______,_______,
+	                                             KC_TAB ,       _______,
+								 KC_SPC ,KC_LSFT,KC_LCTL,       _______,KC_RETN,_______
+	),
 };
