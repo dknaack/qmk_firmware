@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	     KC_RBRC,MEDIA  ,GAME   ,KC_VOLU,KC_MUTE,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RIGHT,KC_EQL ,
 	  								     ESCR   ,KC_LALT,       KC_DEL ,KC_TAB ,
 	                                             KC_LGUI,       KC_PGUP,
-								 NUM_SPC,SFT_TAB,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
+								 NUM_SPC,KC_TAB ,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
 	),
 
     [_RAISE] = LAYOUT_dknaack(
