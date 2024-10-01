@@ -1,3 +1,5 @@
+> **NOTE** (for future me): Use `qmk flash -kb handwired/keyboard/dactyl_manuform/6x6/promicro -km dknaack` to flash the correct keyboard and keymap.
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
