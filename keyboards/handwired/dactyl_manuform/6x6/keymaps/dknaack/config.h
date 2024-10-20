@@ -25,5 +25,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEBOUNCE 5
 #define TAPPING_TERM 200
 #define QUICK_TAP_TERM 0
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define IS_COMMAND() (get_mods() == MOD_MASK_CTRL)

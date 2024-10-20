@@ -11,14 +11,14 @@
 #define NAV_TAB LT(3, KC_TAB)
 #define NAV_ENT LT(3, KC_ENT)
 
-#define GUI_A    LGUI_T(KC_A)
-#define ALT_S    LALT_T(KC_S)
-#define SFT_D    LSFT_T(KC_D)
-#define CTL_F    LCTL_T(KC_F)
-#define CTL_J    RCTL_T(KC_J)
-#define SFT_K    RSFT_T(KC_K)
-#define ALT_L    RALT_T(KC_L)
-#define GUI_SCLN RGUI_T(KC_SCLN)
+#define GUI_A   LGUI_T(KC_A)
+#define ALT_S   LALT_T(KC_S)
+#define SFT_D   LSFT_T(KC_D)
+#define CTL_F   LCTL_T(KC_F)
+#define CTL_J   RCTL_T(KC_J)
+#define SFT_K   RSFT_T(KC_K)
+#define ALT_L   RALT_T(KC_L)
+#define GUI_SCL RGUI_T(KC_SCLN)
 
 #define GUI_1 LGUI_T(KC_1)
 #define ALT_2 LALT_T(KC_2)
@@ -56,11 +56,11 @@ process_combo_event(uint16_t combo_index, bool pressed)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_dknaack(
-	     KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,		KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0    ,KC_END ,
-	     KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P    ,QK_BOOT,
-	     KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCLN,KC_QUOT,
-	     KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH ,KC_MINS,
-	     KC_RBRC,KC_NO  ,GAME   ,KC_VOLU,KC_MUTE,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RIGHT,KC_EQL ,
+	     KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,		KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_END ,
+	     KC_BSLS,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_EQL ,
+	     KC_LBRC,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCL,KC_QUOT,
+	     KC_RBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,KC_MINS,
+	     KC_NO  ,KC_NO  ,GAME   ,KC_NO  ,KC_NO  ,KC_NO  ,	 	KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
 	  								     KC_ESC ,KC_LALT,       KC_DEL ,KC_TAB ,
 	                                             KC_LGUI,       KC_PGUP,
 								 KC_SPC ,NUM_TAB,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
@@ -68,31 +68,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [1] = LAYOUT_dknaack(
 	     _______,_______,_______,_______,_______,_______,		_______,_______,_______,_______,_______,_______,
-	     _______,_______,_______,_______,_______,_______,	 	KC_PLUS,KC_7   ,KC_8   ,KC_9   ,KC_SLSH,_______,
-	     _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,	 	KC_MINS,KC_4   ,KC_5   ,KC_6   ,KC_ASTR,_______,
-	     _______,_______,_______,_______,_______,_______,	 	KC_0   ,KC_1   ,KC_2   ,KC_3   ,KC_EQL ,_______,
+	     KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,	 	KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,
+	     KC_GRV ,GUI_1  ,ALT_2  ,SFT_3  ,CTL_4  ,KC_5   ,		KC_6   ,CTL_7  ,SFT_8  ,ALT_9  ,GUI_0  ,QK_BOOT,
+	     KC_HOME,KC_EXLM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC,	 	KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_END ,
 	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
 	  								     _______,_______,       _______,_______,
 	                                             _______,       _______,
-								 _______,_______,_______,       _______,NAV_ENT,_______
+								 _______,_______,_______,       _______,_______,_______
     ),
 
     [2] = LAYOUT_dknaack(
-	     KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,	 	KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,
-	     _______,KC_CIRC,KC_LT  ,KC_GT  ,KC_DLR ,KC_HASH,	 	KC_AMP ,KC_PERC,KC_LBRC,KC_RBRC,KC_GRV ,_______,
-	     _______,KC_EXLM,KC_MINS,KC_PLUS,KC_UNDS,KC_QUOT,	 	KC_PIPE,KC_COLN,KC_LPRN,KC_RPRN,KC_SCLN,_______,
-	     _______,KC_BSLS,KC_SLSH,KC_GT  ,KC_EQL ,KC_DQUO,	 	KC_TILD,KC_AT  ,KC_LCBR,KC_RCBR,KC_QUES,_______,
-	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
-	  								     _______,_______,       _______,_______,
-	                                             _______,       _______,
-								 _______,NAV_TAB,_______,       _______,_______,_______
-    ),
-
-    [3] = LAYOUT_dknaack(
 	     _______,_______,_______,_______,_______,_______,		_______,_______,_______,_______,_______,_______,
-	     _______,KC_ESC ,MS_UP  ,MS_BTN1,MS_BTN3,MS_WHLU,	 	KC_AMPR,KC_LBRC,KC_VOLD,KC_VOLU,KC_CIRC,_______,
-	     _______,MS_LEFT,MS_DOWN,MS_RGHT,MS_BTN2,MS_WHLD,	 	KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_QUES,_______,
-	     _______,QK_BOOT,KC_MPLY,KC_MPRV,KC_MNXT,KC_MUTE,	 	KC_TILD,KC_MUTE,KC_MPRV,KC_MNXT,KC_MPLY,_______,
+	     _______,MS_BTN2,MS_UP  ,MS_BTN1,MS_BTN3,MS_WHLU,	 	_______,_______,MS_BTN4,MS_BTN5,KC_VOLU,_______,
+	     _______,MS_LEFT,MS_DOWN,MS_RGHT,_______,MS_WHLD,	 	KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_VOLD,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,KC_MPLY,KC_MPRV,KC_MNXT,KC_MUTE,_______,
 	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
 	  								     _______,_______,       _______,_______,
 	                                             _______,       _______,
