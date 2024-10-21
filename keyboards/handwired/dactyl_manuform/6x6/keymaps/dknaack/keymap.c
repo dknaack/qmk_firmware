@@ -57,10 +57,10 @@ process_combo_event(uint16_t combo_index, bool pressed)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_dknaack(
 	     KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,		KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_END ,
-	     KC_BSLS,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_EQL ,
-	     KC_LBRC,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCL,KC_QUOT,
-	     KC_RBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,KC_MINS,
-	     KC_NO  ,KC_NO  ,GAME   ,KC_NO  ,KC_NO  ,KC_NO  ,	 	KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
+	     KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_EQL ,
+	     KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCL,KC_QUOT,
+	     KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,KC_MINS,
+	     KC_RBRC,KC_NO  ,GAME   ,TG(5)  ,KC_NO  ,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
 	  								     KC_ESC ,KC_LALT,       KC_DEL ,KC_TAB ,
 	                                             KC_LGUI,       KC_PGUP,
 								 KC_SPC ,NUM_TAB,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
@@ -98,4 +98,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	                                             KC_TAB ,       _______,
 								 KC_SPC ,KC_LSFT,KC_LCTL,       _______,KC_RETN,_______
 	),
+
+    /* layout for testing no number row */
+	[5] = LAYOUT_dknaack(
+	     KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,		KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,_______,
+	     _______,_______,_______,_______,_______,_______,	 	_______,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,_______,
+	  								     _______,_______,       _______,_______,
+	                                             _______,       _______,
+								 _______,_______,_______,       _______,_______,_______
+	),
+
 };
