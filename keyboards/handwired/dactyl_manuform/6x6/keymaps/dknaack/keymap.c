@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 								 _______,_______,_______,       _______,_______,_______
     ),
 
-    [2] = LAYOUT_dknaack(
+    [3] = LAYOUT_dknaack(
 	     _______,_______,_______,_______,_______,_______,		_______,_______,_______,_______,_______,_______,
 	     _______,MS_BTN2,MS_UP  ,MS_BTN1,MS_BTN3,MS_WHLU,	 	_______,_______,MS_BTN4,MS_BTN5,KC_VOLU,_______,
 	     _______,MS_LEFT,MS_DOWN,MS_RGHT,_______,MS_WHLD,	 	KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_VOLD,_______,
