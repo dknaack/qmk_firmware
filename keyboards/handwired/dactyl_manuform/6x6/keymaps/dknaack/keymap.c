@@ -14,6 +14,7 @@
  * Home-row mods
  */
 
+// base layer mods
 #define GUI_A   LGUI_T(KC_A)
 #define ALT_S   LALT_T(KC_S)
 #define SFT_D   LSFT_T(KC_D)
@@ -23,14 +24,11 @@
 #define ALT_L   RALT_T(KC_L)
 #define GUI_SCL RGUI_T(KC_SCLN)
 
+// number layer mods
 #define GUI_MIN LGUI_T(KC_MINS)
 #define ALT_4   LALT_T(KC_4)
 #define SFT_5   LSFT_T(KC_5)
 #define CTL_6   LCTL_T(KC_6)
-#define GUI_0 RGUI_T(KC_0)
-#define ALT_9 RALT_T(KC_9)
-#define SFT_8 RSFT_T(KC_8)
-#define CTL_7 RCTL_T(KC_7)
 
 /*
  * Combos
