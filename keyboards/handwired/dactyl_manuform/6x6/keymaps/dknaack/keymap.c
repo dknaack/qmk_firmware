@@ -3,6 +3,8 @@
 
 #include QMK_KEYBOARD_H
 #include "layout.h"
+#include "keymap_us_international.h"
+#include "sendstring_us_international.h"
 
 #define GAME TG(4)
 
@@ -29,21 +31,34 @@
 #define SFT_8 RSFT_T(KC_8)
 #define CTL_7 RCTL_T(KC_7)
 
-const uint16_t PROGMEM semicolon_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM enter_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM escape_combo[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM backspace_combo[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM caps_word_combo[] = {SFT_D, SFT_K, COMBO_END};
-const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
+#define GUI_MIN LGUI_T(KC_MINS)
+#define ALT_4   LALT_T(KC_4)
+#define SFT_5   LSFT_T(KC_5)
+#define CTL_6   LCTL_T(KC_6)
+#define GUI_0 RGUI_T(KC_0)
+#define ALT_9 RALT_T(KC_9)
+#define SFT_8 RSFT_T(KC_8)
+#define CTL_7 RCTL_T(KC_7)
+
+/*
+ * Combos
+ */
+
+// combos adapted from <https://gitlui.github.io/zmk-config-mone-layout/>
+const uint16_t PROGMEM combo_ae[] = {KC_H, GUI_A, COMBO_END};
+const uint16_t PROGMEM combo_oe[] = {KC_G, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_ue[] = {KC_G, KC_U, COMBO_END};
+const uint16_t PROGMEM combo_ss[] = {KC_H, ALT_S, COMBO_END};
+const uint16_t PROGMEM combo_at[] = {KC_H, KC_Q, COMBO_END};
+const uint16_t PROGMEM combo_capsword[] = {SFT_D, SFT_K, COMBO_END};
+
 combo_t key_combos[] = {
-    COMBO_ACTION(caps_word_combo),
-    COMBO(semicolon_combo, KC_SCLN),
-    COMBO(enter_combo, KC_ENT),
-    //COMBO(escape_combo, KC_ESC),
-    COMBO(backspace_combo, KC_BACKSPACE),
-    COMBO(copy_combo, KC_COPY),
-    COMBO(paste_combo, KC_PASTE),
+    COMBO_ACTION(combo_capsword),
+    COMBO(combo_ae, US_ADIA),
+    COMBO(combo_oe, US_ODIA),
+    COMBO(combo_ue, US_UDIA),
+    COMBO(combo_ss, US_SS),
+    COMBO(combo_at, KC_AT),
 };
 
 void
