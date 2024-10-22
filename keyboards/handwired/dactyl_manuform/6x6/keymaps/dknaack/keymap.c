@@ -13,6 +13,10 @@
 #define NAV_TAB LT(3, KC_TAB)
 #define NAV_ENT LT(3, KC_ENT)
 
+/*
+ * Home-row mods
+ */
+
 #define GUI_A   LGUI_T(KC_A)
 #define ALT_S   LALT_T(KC_S)
 #define SFT_D   LSFT_T(KC_D)
@@ -68,6 +72,10 @@ process_combo_event(uint16_t combo_index, bool pressed)
         caps_word_toggle();
     }
 }
+
+/*
+ * Keymap
+ */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_dknaack(
