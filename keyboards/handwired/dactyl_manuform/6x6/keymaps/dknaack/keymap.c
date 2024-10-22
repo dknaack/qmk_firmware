@@ -6,12 +6,9 @@
 #include "keymap_us_international.h"
 #include "sendstring_us_international.h"
 
-#define GAME TG(4)
-
-#define SYM_ENT LT(2, KC_ENT)
-#define NUM_TAB LT(1, KC_TAB)
-#define NAV_TAB LT(3, KC_TAB)
-#define NAV_ENT LT(3, KC_ENT)
+#define LT1_SPC LT(1, KC_SPC)
+#define LT2_ENT LT(2, KC_ENT)
+#define LT3_TAB LT(3, KC_TAB)
 
 /*
  * Home-row mods
@@ -74,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	     KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,	 	KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_EQL ,
 	     KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,	 	KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_SCL,KC_QUOT,
 	     KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,	 	KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,KC_MINS,
-	     KC_RBRC,KC_NO  ,GAME   ,TG(5)  ,KC_NO  ,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
+	     KC_RBRC,KC_NO  ,TG(4)  ,TG(5)  ,KC_NO  ,KC_NO  ,	 	KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
 	  								     KC_ESC ,KC_LALT,       KC_DEL ,KC_TAB ,
 	                                             KC_LGUI,       KC_PGUP,
-								 KC_SPC ,NUM_TAB,KC_LCTL,       KC_PGDN,SYM_ENT, KC_BSPC
+								 LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT3_ENT, KC_BSPC
 	),
 
     [1] = LAYOUT_dknaack(
