@@ -121,16 +121,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 								 KC_SPC ,KC_LSFT,KC_LCTL,       _______,KC_RETN,_______
 	),
 
-    /* layout for testing no number row */
+    /* layout for testing 34 keys */
 	[5] = LAYOUT_dknaack(
 	     KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,		KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
 	     KC_NO  ,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,KC_NO  ,
 	     KC_NO  ,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,KC_NO  ,
 	     KC_NO  ,_______,_______,_______,_______,_______,	 	_______,_______,_______,_______,_______,KC_NO  ,
 	     KC_NO  ,_______,_______,_______,_______,_______,	 	_______,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
-	  								     _______,_______,       _______,_______,
-	                                             _______,       _______,
-								 _______,_______,_______,       _______,_______,_______
+	  								     KC_NO  ,KC_NO  ,       KC_NO  ,KC_NO  ,
+	                                             KC_NO  ,       KC_NO  ,
+								 _______,_______,KC_NO  ,       KC_NO  ,_______,_______
 	),
 
 };
