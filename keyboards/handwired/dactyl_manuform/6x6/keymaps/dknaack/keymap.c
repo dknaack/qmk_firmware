@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT3_ENT, KC_BSPC
     ),
 
-    [1] = LAYOUT_dknaack(
+    [3] = LAYOUT_dknaack(
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
          _______,KC_LCBR,KC_7   ,KC_8   ,KC_9   ,KC_RCBR,       _______,_______,_______,_______,_______,_______,
          _______,KC_LBRC,ALT_4  ,SFT_5  ,CTL_6  ,KC_RBRC,       _______,_______,_______,_______,_______,QK_BOOT,
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 _______,_______,_______,        _______,KC_EQL ,KC_DLR
     ),
 
-    [3] = LAYOUT_dknaack(
+    [1] = LAYOUT_dknaack(
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
          _______,_______,_______,_______,_______,_______,       _______,_______,MS_BTN4,MS_BTN5,KC_VOLU,_______,
          _______,_______,_______,_______,_______,_______,       KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_VOLD,_______,
