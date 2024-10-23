@@ -30,25 +30,26 @@
 #define SFT_5   LSFT_T(KC_5)
 #define CTL_6   LCTL_T(KC_6)
 
+// colemak-dh mods
+#define HOME_A LGUI_T(KC_A)
+#define HOME_R LALT_T(KC_R)
+#define HOME_S LSFT_T(KC_S)
+#define HOME_T LCTL_T(KC_T)
+#define HOME_N RCTL_T(KC_N)
+#define HOME_E RALT_T(KC_E)
+#define HOME_I RALT_T(KC_I)
+#define HOME_O RGUI_T(KC_O)
+
 /*
  * Combos
  */
 
-// combos adapted from <https://gitlui.github.io/zmk-config-mone-layout/>
-const uint16_t PROGMEM combo_ae[] = {KC_H, GUI_A, COMBO_END};
-const uint16_t PROGMEM combo_oe[] = {KC_G, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_ue[] = {KC_G, KC_U, COMBO_END};
-const uint16_t PROGMEM combo_ss[] = {KC_H, ALT_S, COMBO_END};
-const uint16_t PROGMEM combo_at[] = {KC_H, KC_Q, COMBO_END};
 const uint16_t PROGMEM combo_capsword[] = {SFT_D, SFT_K, COMBO_END};
+const uint16_t PROGMEM combo_escape[] = {KC_X, KC_C, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO_ACTION(combo_capsword),
-    COMBO(combo_ae, US_ADIA),
-    COMBO(combo_oe, US_ODIA),
-    COMBO(combo_ue, US_UDIA),
-    COMBO(combo_ss, US_SS),
-    COMBO(combo_at, KC_AT),
+    COMBO(combo_escape, KC_ESC),
 };
 
 void
