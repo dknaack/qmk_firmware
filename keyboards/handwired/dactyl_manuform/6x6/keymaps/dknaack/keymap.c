@@ -101,13 +101,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [2] = LAYOUT_dknaack(
         _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
-        _______,KC_CIRC,KC_LT  ,KC_GT  ,KC_DLR ,KC_HASH,        KC_AMPR,KC_PERC,KC_LBRC,KC_RBRC,KC_GRV ,_______,
-        _______,KC_EXLM,KC_MINS,KC_PLUS,KC_UNDS,KC_QUOT,        KC_PIPE,KC_COLN,KC_LCBR,KC_RCBR,KC_QUES,_______,
-        _______,KC_BSLS,KC_SLSH,KC_ASTR,KC_EQL ,KC_DQUO,        KC_TILD,KC_SCLN,KC_LPRN,KC_RPRN,KC_AT  ,_______,
+        _______,_______,_______,_______,_______,_______,        KC_CIRC,KC_AMPR,KC_ASTR,KC_PERC,KC_AT  ,_______,
+        _______,_______,_______,_______,_______,_______,        KC_PIPE,KC_MINS,KC_PLUS,KC_EXLM,KC_GRV ,_______,
+        _______,_______,_______,_______,_______,_______,        KC_TILD,KC_HASH,KC_LT  ,KC_GT  ,KC_BSLS,_______,
         _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
                                         _______,_______,        _______,_______,
                                                 _______,        _______,
-                                _______,_______,_______,        _______,_______,_______
+                                _______,_______,_______,        _______,KC_EQL ,KC_DLR
     ),
 
     [3] = LAYOUT_dknaack(
