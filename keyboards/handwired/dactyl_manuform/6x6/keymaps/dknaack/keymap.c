@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /* layout for testing 34 keys */
-    [5] = LAYOUT_dknaack(
+    [7] = LAYOUT_dknaack(
          KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,       KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
          KC_NO  ,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,KC_NO  ,
          KC_NO  ,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,KC_NO  ,
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /* colemak-dh layer */
-    [6] = LAYOUT_dknaack(
+    [5] = LAYOUT_dknaack(
          KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,       KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,
          KC_NO  ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B   ,       KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_NO  ,
          KC_NO  ,HOME_A ,HOME_R ,HOME_S ,HOME_T ,KC_G   ,       KC_M   ,HOME_N ,HOME_E ,HOME_I ,HOME_O ,KC_NO  ,
