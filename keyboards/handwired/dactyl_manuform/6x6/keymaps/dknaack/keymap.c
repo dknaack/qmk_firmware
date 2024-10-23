@@ -7,8 +7,9 @@
 #include "sendstring_us_international.h"
 
 #define LT1_SPC LT(1, KC_SPC)
-#define LT2_ENT LT(2, KC_ENT)
-#define LT3_TAB LT(3, KC_TAB)
+#define LT2_TAB LT(2, KC_TAB)
+#define LT3_ENT LT(3, KC_ENT)
+#define LT4_BSPC LT(4, KC_BSPC)
 
 /*
  * Home-row mods
@@ -85,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_RBRC,TG(6)  ,TG(4)  ,TG(5)  ,KC_NO  ,KC_NO  ,       KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
                                          KC_ESC ,KC_LALT,       KC_DEL ,KC_TAB ,
                                                  KC_LGUI,       KC_PGUP,
-                                 LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT3_ENT, KC_BSPC
+                                 LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT3_ENT,LT4_BSPC
     ),
 
     [3] = LAYOUT_dknaack(
