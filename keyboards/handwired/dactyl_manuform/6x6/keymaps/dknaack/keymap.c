@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  KC_0   ,KC_UNDS,_______,       _______,_______,_______
     ),
 
-    [2] = LAYOUT_dknaack(
+    [1] = LAYOUT_dknaack(
         _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,        KC_CIRC,KC_AMPR,KC_ASTR,KC_PERC,KC_AT  ,_______,
         _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,        KC_HASH,KC_MINS,KC_PLUS,KC_EXLM,KC_GRV ,_______,
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 _______,_______,_______,        _______,KC_EQL ,KC_DLR
     ),
 
-    [1] = LAYOUT_dknaack(
+    [2] = LAYOUT_dknaack(
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
          _______,_______,_______,_______,_______,_______,       _______,_______,MS_BTN4,MS_BTN5,KC_VOLU,_______,
          _______,_______,_______,_______,_______,_______,       KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_VOLD,_______,
