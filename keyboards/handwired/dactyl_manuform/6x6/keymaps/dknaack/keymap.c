@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
                                         KC_ESC ,KC_LALT,        _______,_______,
                                                 KC_TAB ,        _______,
-                                KC_SPC ,KC_LSFT,KC_LCTL,        _______,KC_RETN,_______
+                                KC_SPC ,KC_LSFT,KC_LCTL,        _______,KC_ENT ,_______
     ),
 
     /* layout for testing 34 keys */
