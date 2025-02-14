@@ -22,8 +22,10 @@
 #define CTL_F   LCTL_T(KC_F)
 #define CTL_J   RCTL_T(KC_J)
 #define SFT_K   RSFT_T(KC_K)
-#define ALT_L   RALT_T(KC_L)
+#define ALT_L   LALT_T(KC_L)
 #define GUI_QT  RGUI_T(KC_QUOT)
+#define ALT_SLS RALT_T(KC_SLSH)
+#define ALT_Z   RALT_T(KC_Z)
 
 // number layer mods
 #define GUI_MIN LGUI_T(KC_MINS)
@@ -37,8 +39,8 @@
 #define HOME_S LSFT_T(KC_S)
 #define HOME_T LCTL_T(KC_T)
 #define HOME_N RCTL_T(KC_N)
-#define HOME_E RALT_T(KC_E)
-#define HOME_I RALT_T(KC_I)
+#define HOME_E LALT_T(KC_E)
+#define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
 /*
@@ -81,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_dknaack(
          KC_HOME,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,       KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_END ,
          KC_GRV ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,       KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_NUBS,
-         KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,       KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_QT ,KC_EQL ,
-         KC_LBRC,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,       KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,KC_MINS,
+         KC_BSLS,GUI_A  ,ALT_S  ,SFT_D  ,CTL_F  ,KC_G   ,       KC_H   ,CTL_J  ,SFT_K  ,ALT_L  ,GUI_QT ,KC_SCLN,
+         KC_LBRC,ALT_Z  ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,       KC_N   ,KC_M   ,KC_COMM,KC_DOT ,ALT_SLS,KC_MINS,
          KC_RBRC,TG(5)  ,TG(6)  ,TG(7)  ,KC_NO  ,KC_NO  ,       KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
                                          KC_ESC ,KC_LALT,       KC_DEL ,KC_TAB ,
                                                  KC_LGUI,       KC_PGUP,
