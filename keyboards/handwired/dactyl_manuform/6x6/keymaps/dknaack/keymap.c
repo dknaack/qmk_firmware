@@ -3,13 +3,13 @@
 
 #include QMK_KEYBOARD_H
 #include "layout.h"
-#include "keymap_us_international.h"
+#include "keymap_german.h"
 #include "sendstring_us_international.h"
 
-#define LT1_SPC LT(1, KC_SPC)
-#define LT2_TAB LT(2, KC_TAB)
-#define LT3_ENT LT(3, KC_ENT)
-#define LT4_BSPC LT(4, KC_BSPC)
+#define LT1_SPC  LT(1, KC_SPC)
+#define LT2_TAB  LT(2, KC_TAB)
+#define LT2_ENT  LT(2, KC_ENT)
+#define LT1_BSPC LT(1, KC_BSPC)
 
 /*
  * Home-row mods
@@ -27,11 +27,25 @@
 #define ALT_SLS RALT_T(KC_SLSH)
 #define ALT_Z   RALT_T(KC_Z)
 
-// number layer mods
-#define GUI_MIN LGUI_T(KC_MINS)
-#define ALT_4   LALT_T(KC_4)
-#define SFT_5   LSFT_T(KC_5)
-#define CTL_6   LCTL_T(KC_6)
+// symbol layer mods
+#define GUI_1 LGUI_T(KC_1)
+#define ALT_2 LALT_T(KC_2)
+#define SFT_3 LSFT_T(KC_3)
+#define CTL_4 LCTL_T(KC_4)
+#define CTL_7 RCTL_T(KC_7)
+#define SFT_8 RSFT_T(KC_8)
+#define ALT_9 LALT_T(KC_9)
+#define GUI_0 RGUI_T(KC_0)
+
+// function layer mods
+#define GUI_F1 LGUI_T(KC_F1)
+#define ALT_F2 LALT_T(KC_F2)
+#define SFT_F3 LSFT_T(KC_F3)
+#define CTL_F4 LCTL_T(KC_F4)
+#define CTL_F7 RCTL_T(KC_F7)
+#define SFT_F8 RSFT_T(KC_F8)
+#define ALT_F9 LALT_T(KC_F9)
+#define GUI_F10 RGUI_T(KC_F10)
 
 // colemak-dh mods
 #define HOME_A LGUI_T(KC_A)
@@ -88,35 +102,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_RBRC,TG(5)  ,TG(6)  ,TG(7)  ,KC_NO  ,KC_NO  ,       KC_NO  ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_EQL ,
                                          KC_ESC ,KC_LALT,       KC_DEL ,KC_DEL ,
                                                  KC_LGUI,       KC_PGUP,
-                                 LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT3_ENT,LT4_BSPC
-    ),
-
-    [2] = LAYOUT_dknaack(
-        _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,        KC_CIRC,KC_AMPR,KC_ASTR,KC_PERC,KC_AT  ,_______,
-        _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,        KC_HASH,KC_MINS,KC_PLUS,KC_EXLM,KC_GRV ,_______,
-        _______,_______,_______,_______,_______,_______,        KC_TILD,KC_PIPE,KC_LT  ,KC_GT  ,KC_BSLS,_______,
-        _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
-                                        _______,_______,        _______,_______,
-                                                _______,        _______,
-                                _______,_______,_______,        _______,KC_EQL ,KC_DLR
+                                 LT1_SPC,LT2_TAB,KC_LCTL,       KC_PGDN,LT2_ENT,LT1_BSPC
     ),
 
     [1] = LAYOUT_dknaack(
+        _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
+        _______,KC_EXLM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC,        KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,_______,
+        _______,GUI_1  ,ALT_2  ,SFT_3  ,CTL_4  ,KC_5   ,        KC_6   ,CTL_7  ,SFT_8  ,ALT_9  ,GUI_0  ,_______,
+        _______,KC_LBRC,KC_LCBR,KC_RCBR,KC_RBRC,KC_TILD,        KC_GRV ,KC_MINS,KC_LT  ,KC_GT  ,KC_PLUS,_______,
+        _______,_______,_______,_______,_______,_______,        _______,_______,_______,_______,_______,_______,
+                                        _______,_______,        _______,_______,
+                                                _______,        _______,
+                                KC_UNDS,KC_BSLS,_______,        _______,KC_EQL ,KC_PIPE
+    ),
+
+    [2] = LAYOUT_dknaack(
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
-         _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
-         _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,       _______,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,
-         _______,_______,_______,_______,_______,_______,       _______,KC_HOME,KC_PGDN,KC_PGUP,KC_END ,_______,
+         _______,KC_ESC ,_______,_______,_______,QK_BOOT,       _______,KC_HOME,KC_PGDN,KC_PGUP,KC_END ,_______,
+         _______,GUI_F1 ,ALT_F2 ,SFT_F3 ,CTL_F4 ,KC_F5  ,       KC_F6  ,CTL_F7 ,SFT_F8 ,ALT_F9 ,GUI_F10,_______,
+         _______,KC_MUTE,KC_MPRV,KC_MNXT,KC_MPLY,KC_F11 ,       KC_F12 ,KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
                                          _______,_______,       _______,_______,
                                                  _______,       _______,
-                                 _______,_______,_______,       _______,KC_ENT ,KC_BSPC
+                                 KC_SPC ,KC_TAB ,_______,       _______,KC_ENT ,KC_BSPC
     ),
 
+#if 0
     [4] = LAYOUT_dknaack(
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
          _______,KC_F12 ,KC_F7  ,KC_F8  ,KC_F9  ,KC_NO  ,       _______,_______,_______,_______,_______,_______,
-         _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,KC_NO  ,       _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______,
+         _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,KC_ESC ,       _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______,
          _______,KC_F10 ,KC_F1  ,KC_F2  ,KC_F3  ,QK_BOOT,       _______,KC_MPLY,KC_MPRV,KC_MNXT,KC_MUTE,_______,
          _______,_______,_______,_______,_______,_______,       _______,_______,_______,_______,_______,_______,
                                          _______,_______,       _______,_______,
@@ -134,6 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  _______,       _______,
                                  KC_UNDS,KC_0   ,_______,       _______,_______,_______
     ),
+#endif
 
     /* game layer */
     [6] = LAYOUT_dknaack(
